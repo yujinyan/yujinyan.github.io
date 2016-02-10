@@ -3,8 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <title>Hello!</title>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
 </head>
 <body>
     <h1>Hello World!</h1>
+    <p id="title"></p>
+    <script>
+        $(function() {
+            $.getJSON('http://yujinyan.aliapp.com/wp-json/wp/v2/posts/', function(data) {
+                
+                $('#title').text(data[0]['title']['rendered']);
+            });
+        })
+
+        
+    </script>
 </body>
 </html>
